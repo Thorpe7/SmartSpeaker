@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "smartspeaker"
-version = "0.1.0"
+name = "app"
+version = "0.0.1"
 description = "Iterative smart speaker component project"
 authors = ["Maxwell Thorpe"]
 readme = "README.md"
@@ -8,6 +8,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 pre-commit = "^3.7.1"
+pvrecorder = "^1.2.2"
+openai-whisper = "^20231117"
+whisper = "^1.1.10"
+pylint = "^3.2.3"
 
 
 [build-system]
