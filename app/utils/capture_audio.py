@@ -34,11 +34,13 @@ def capture_audio(mic_dev_idx: int, duration: int = 512) -> PosixPath:
     try:
         recorder = PvRecorder(device_index=mic_dev_idx, frame_length=duration)
         recorder.start()
+        log.info("Recording audio...")
         while time.time() < MAX_AUDIO_DURATION:
             frame = recorder.read()
             audio.extend(frame)
 
         recorder.stop()
+        log.info("Recording stopped...")
         with wave.open(str(audio_output_path), "w") as f:
             f.setparams((1, 2, 16000, 512, "NONE", "NONE"))
             f.writeframes(struct.pack("h" * len(audio), *audio))

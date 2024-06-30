@@ -4,7 +4,7 @@ import logging
 
 from app.smart_speaker import main
 
-logging.basicConfig(level=logging.ERROR, handlers=[logging.StreamHandler()])
+logging.basicConfig(level=logging.INFO, handlers=[logging.StreamHandler()])
 log = logging.getLogger(__name__)
 
 

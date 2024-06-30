@@ -19,7 +19,7 @@ def speech_to_text(audio_path: PosixPath) -> str:
     """
     model = whisper.load_model("base")
     result = model.transcribe(str(audio_path))
-    print(result["text"])
+    return result["text"]
 
 
 if __name__ == "__main__":
