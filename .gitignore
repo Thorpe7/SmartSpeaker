@@ -1,1 +1,5 @@
 audio_output.wav
+__pycache__/
+bot_response*
+audio_output*
+.python-version

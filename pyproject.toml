@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.10"
 pre-commit = "^3.7.1"
 pvrecorder = "^1.2.2"
-openai-whisper = "^20231117"
+openai-whisper = {git = "https://github.com/openai/whisper.git"}
 whisper = "^1.1.10"
 pylint = "^3.2.3"
 openai = "^1.35.7"

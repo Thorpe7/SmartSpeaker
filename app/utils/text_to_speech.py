@@ -1,14 +1,13 @@
 """ Script for converting bot response to speech. """
 
 import os
-import uuid
 import logging
+from pathlib import Path, PosixPath
 
 from pydub import AudioSegment
 from pydub.playback import play
 from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
-from pathlib import Path, PosixPath
 
 log = logging.getLogger(__name__)
 
@@ -47,7 +46,7 @@ def text_to_speech(bot_response: str, output_path: PosixPath) -> None:
         for chunk in response:
             f.write(chunk)
 
-    log.info(f"Bot response converted to speech & saved as {output_path}")
+    log.info("Bot response converted to speech & saved as %s", output_path)
 
     play_sound(output_path)
 

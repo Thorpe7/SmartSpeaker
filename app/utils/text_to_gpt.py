@@ -2,7 +2,6 @@
 
 import os
 import logging
-import asyncio
 from openai import OpenAI
 
 log = logging.getLogger(__name__)
@@ -38,8 +37,9 @@ def text_to_gpt(text: str) -> str:
         role="user",
         content=text,
     )
+    log.debug("User message: %s", message.data[0].content[0].text.value)
 
-    # TODO: Add mechanism for streaming, current implementation w/o streaming
+    # Add mechanism for streaming, current implementation w/o streaming
     # Create a run passing the assistant and the message thread
     run = CLIENT.beta.threads.runs.create_and_poll(
         thread_id=thread.id,
